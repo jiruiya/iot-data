@@ -19,7 +19,59 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <flink.version>1.18.0</flink.version>
+        <iot-core.version>1.0.1-SNAPSHOT</iot-core.version>
+        <protobuf-java.version>2.5.0</protobuf-java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.scope>compile</project.scope>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>com.circue.data.iot</groupId>
+                <artifactId>iot-proto</artifactId>
+                <version>${iot-core.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-connector-kafka -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-connector-kafka</artifactId>
+                <version>1.17.2</version>
+            </dependency>
+            <!-- protobuf -->
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf-java.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-streaming-java -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-streaming-java</artifactId>
+                <version>${flink.version}</version>
+                <scope>${project.scope}</scope>
+            </dependency>
+            <!-- Flink依赖 -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-java</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-core -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-core</artifactId>
+                <version>${flink.version}</version>
+                <scope>${project.scope}</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-clients</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>
