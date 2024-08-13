@@ -1,4 +1,4 @@
-package com.circue.alarm.common.utils
+package com.circue.utils
 
 import java.time.format.DateTimeFormatter
 import java.time.{Instant, LocalDateTime, ZoneId, ZoneOffset}
