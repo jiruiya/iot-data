@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="enjoy-data" />
+        <module name="well-data" />
+        <module name="common-data" />
+        <module name="super-data" />
+        <module name="live-data" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="common-data" target="1.8" />
+      <module name="enjoy-data" target="1.8" />
+      <module name="iot-data" target="1.8" />
+      <module name="live-data" target="1.8" />
+      <module name="super-data" target="1.8" />
+      <module name="well-data" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

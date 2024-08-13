@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="14ad17dc-23b8-465c-9b0a-ac0238494383" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../ChargeWarnOffLine/src/main/resources/core-site.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChargeWarnOffLine/src/main/resources/hdfs-site.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChargeWarnOffLine/src/main/resources/hive-site.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChargeWarnOffLine/src/main/scala/com/circue/WarnApp.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChargeWarnOffLine/src/main/scala/com/circue/utils/DateUtil.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChargeWarnOffLine/src/main/scala/com/circue/utils/JsonUtils.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChargeWarnOffLine/src/main/scala/com/circue/utils/WarnMarker.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChargeWarnOffLine/src/main/scala/com/circue/warn/WarnMessage.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-data/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-data/src/main/java/com/plan/data/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/enjoy-data/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/enjoy-data/src/main/java/com/plan/data/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-data/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-data/src/main/java/com/plan/data/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/super-data/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/super-data/src/main/java/com/plan/data/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/well-data/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/well-data/src/main/java/com/plan/data/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2kansYBMdh9WaeLGEVr6SpWRsJH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "D:/opt/think/code/iot-data",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="iot-data" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="iot-data" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="14ad17dc-23b8-465c-9b0a-ac0238494383" name="Changes" comment="" />
+      <created>1723530765351</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1723530765351</updated>
+      <workItem from="1723530766510" duration="325000" />
+      <workItem from="1723531117743" duration="441000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
