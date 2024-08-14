@@ -21,6 +21,7 @@
         <maven.compiler.target>8</maven.compiler.target>
         <flink.version>1.18.0</flink.version>
         <iot-core.version>1.0.1-SNAPSHOT</iot-core.version>
+        <parser-core.version>1.0.4-SNAPSHOT</parser-core.version>
         <protobuf-java.version>2.5.0</protobuf-java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.scope>compile</project.scope>
@@ -32,6 +33,11 @@
                 <groupId>com.circue.data.iot</groupId>
                 <artifactId>iot-proto</artifactId>
                 <version>${iot-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.circue.data.iot</groupId>
+                <artifactId>parser-core</artifactId>
+                <version>${parser-core.version}</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-connector-kafka -->
             <dependency>
