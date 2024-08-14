@@ -1,26 +1,25 @@
 package com.plan.data;
 
 import com.circue.data.iot.parser.IotParser;
+import com.circue.data.iot.parser.ParseConfig;
+import com.circue.iot.proto.KvPairMessage;
 import com.circue.iot.proto.Message.IotMessage;
-import com.plan.data.source.KafkaDeserializationSchema;
 import com.plan.data.source.KafkaMySource;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
+import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.common.functions.MapFunction;
-import org.apache.flink.api.common.serialization.DeserializationSchema;
-import org.apache.flink.api.common.typeinfo.TypeHint;
 import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.api.common.typeinfo.Types;
-import org.apache.flink.connector.kafka.source.KafkaSource;
-import org.apache.flink.connector.kafka.source.enumerator.initializer.OffsetsInitializer;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
-
-import java.io.IOException;
-import java.util.Arrays;
+import org.apache.flink.util.Collector;
+import scala.collection.Iterator;
+import scala.collection.JavaConversions;
+import scala.collection.JavaConverters;
+import scala.collection.immutable.Map$;
+import scala.collection.immutable.List;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.stream.Stream;
 
 public class IotParserApp {
@@ -37,16 +36,32 @@ public class IotParserApp {
             "kafka source",
             byteArrayTypeInfo);
 
-    SingleOutputStreamOperator<String> map =
+    SingleOutputStreamOperator<KvPairMessage.IotKvPair> map =
         kafkaSource
             .map((MapFunction<byte[], IotMessage>) IotMessage::parseFrom)
-            .map(new MapFunction<IotMessage, String>() {
-                @Override
-                public String map(IotMessage iotMessage) throws Exception {
-                    HashMap<String, List> stringListHashMap = new HashMap<>();
-                    IotParser.parse(Stream.of(iotMessage).iterator().asScala(),stringListHashMap );
-                }
-            })
+                    .flatMap(new FlatMapFunction<IotMessage, KvPairMessage.IotKvPair>() {
+                      @Override
+                      public void flatMap(IotMessage iotMessage, Collector<KvPairMessage.IotKvPair> collector) throws Exception {
+                        HashMap<String, List<ParseConfig>> stringListHashMap = new HashMap<>();
+                      scala.collection.mutable.Map scalaMap = JavaConversions.mapAsScalaMap(stringListHashMap);
+                      Object obj = Map$.MODULE$.<String, List<ParseConfig>>newBuilder().$plus$plus$eq(scalaMap.toSeq());
+                      Object result = ((scala.collection.mutable.Builder) obj).result();
+                      scala.collection.immutable.Map<String, List<ParseConfig>> scala_imMap = (scala.collection.immutable.Map)result;
+
+                      Iterator<IotMessage> iotMessageIterator =
+                              JavaConverters.asScalaIteratorConverter(Stream.of(iotMessage).iterator()).asScala();
+                      try{
+                      Iterator<KvPairMessage.IotKvPair> parse = IotParser.parse(iotMessageIterator, scala_imMap);
+                        java.util.Iterator<KvPairMessage.IotKvPair> iotKvPairIterator = JavaConversions.asJavaIterator(parse);
+                        while (iotKvPairIterator.hasNext()){
+                          collector.collect(iotKvPairIterator.next());
+                        }
+                      }catch ( Exception e){
+                        System.out.println(e);
+                      }
+                      }
+                    });
+//
     env.setParallelism(2);
     map.print();
     env.execute("1");

@@ -6,12 +6,13 @@ import org.apache.flink.connector.kafka.source.enumerator.initializer.OffsetsIni
 public class KafkaMySource {
     public static KafkaSource<byte[]> getKafkaSource(){
         return KafkaSource.<byte[]>builder()
-                .setBootstrapServers("datahouse-node1:9092,datahouse-node2:9092,datahouse-node3:9092")
-                .setTopics("iot-message-all")
+                .setBootstrapServers("dev-host1:9092,dev-host2:9092,dev-host3:9092")
+                .setTopics("iot-kvPair")
                 .setGroupId("my-group")
                 .setStartingOffsets(OffsetsInitializer.earliest())
                 .setValueOnlyDeserializer(new KafkaDeserializationSchema())
                 .build();
+
     }
 
 }
